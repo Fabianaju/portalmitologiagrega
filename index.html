@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Mitologia Grega</title>
+
+    <!-- Link para a folha de estilo personalizada -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="homeSection active" id="home">
+        <div class="navBar">
+            <div class="logo">
+                <h1>Portal da Mitologia Grega</h1>
+            </div>
+            <ul class="navList">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#legends">Lendas</a></li>
+                <li><a href="#gods">Deuses</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li class="theme-switcher">
+                    <label for="theme-toggle" class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="banner">
+            <div class="zeus-container">
+                <img src="zeus-statue.png" alt="Estátua de Zeus" class="zeus-image">
+                <div class="lightning"></div>
+            </div>
+            <div class="info">
+                <h1>Bem-vindo ao <span style="color: #ffd700;">Portal da Mitologia Grega</span></h1>
+                <h2>Explore os Mitos e Deuses</h2>
+                <p>Descubra as histórias fascinantes dos deuses gregos, heróis e mitos que moldaram a cultura da Grécia Antiga e influenciam o mundo até hoje.</p>
+                <div class="socialMedia">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Sobre -->
+    <div class="aboutSection" id="about">
+        <div class="aboutContent">
+            <div class="aboutText">
+                <h2>Sobre a Mitologia Grega</h2>
+                <p>A mitologia grega é um conjunto de mitos e lendas que envolvem deuses, deusas, heróis e criaturas fantásticas. Ela faz parte da cultura e religião da Grécia Antiga e explica a origem do mundo e a relação entre os seres humanos e os deuses.</p>
+            </div>
+            <div class="aboutImage">
+                <img src="greek-temple.png" alt="Templo Grego">
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Lendas -->
+    <div class="legendsSection" id="legends">
+        <div class="container">
+            <h2>Lendas Gregas</h2>
+            <div class="legendItem">
+                <img src="legend1.png" alt="Lenda 1">
+                <h3>O Labirinto de Creta</h3>
+                <p>Explore a famosa lenda do Labirinto e o Minotauro que o habitava, um dos mitos mais emblemáticos da Grécia Antiga.</p>
+            </div>
+            <div class="legendItem">
+                <img src="legend2.png" alt="Lenda 2">
+                <h3>A Jornada de Ulisses</h3>
+                <p>Acompanhe as aventuras de Ulisses em sua jornada de volta para Ítaca, cheia de desafios e encontros com criaturas mitológicas.</p>
+            </div>
+            <div class="legendItem">
+                <img src="legend3.png" alt="Lenda 3">
+                <h3>Perseu e Medusa</h3>
+                <p>Descubra a épica história de Perseu e sua missão para derrotar a temida Medusa, uma das figuras mais aterrorizantes da mitologia grega.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Deuses -->
+    <div class="godsSection" id="gods">
+        <div class="container">
+            <h2>Deuses Gregos</h2>
+            <div class="godsContent">
+                <p>Conheça os principais deuses do panteão grego, suas histórias, poderes e influência na vida dos mortais e dos próprios deuses.</p>
+                <img src="gods.png" alt="Deuses Gregos">
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Contato -->
+    <div class="contactSection" id="contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <form>
+                <div class="formGroup">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formGroup">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="socialMedia">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2024 Portal da Mitologia Grega. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts para Toggle do Tema -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeToggle.checked = true;
+        }
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
